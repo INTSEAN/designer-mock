@@ -1,6 +1,6 @@
-# ts-tailwind-motion-shadcn-starter
+# Landing Page Template
 
-A modern and flexible Next.js starter template with **TypeScript**, **Tailwind CSS**, **Framer Motion**, and **shadcn/ui**. This template is designed to help you kickstart your Next.js projects with a clean, scalable, and animated setup.
+A world-class landing page starter with **Next.js**, **TypeScript**, **Tailwind CSS**, **Framer Motion**, and **shadcn/ui**. Build beautiful, animated landing pages with a minimal, flexible foundation.
 
 ---
 
@@ -13,6 +13,7 @@ A modern and flexible Next.js starter template with **TypeScript**, **Tailwind C
 - **shadcn/ui**: Pre-built, accessible, and customizable UI components.
 - **Dark Mode Support**: Built-in light/dark theme toggle.
 - **Responsive Design**: Fully responsive layout with mobile-friendly navigation.
+- **Landing Page Ready**: Minimal hero, nav, and footer placeholders—add your content and ship.
 
 ---
 
@@ -24,6 +25,7 @@ ts-tailwind-motion-shadcn-starter/
 │   ├── layout.tsx         # Root layout with Navbar and ThemeProvider
 │   ├── page.tsx           # Home page
 │   ├── about/             # About page
+│   ├── contact/            # Contact page
 │   ├── not-found.tsx      # Custom 404 page
 ├── components/            # Reusable components (Navbar, PageTransition, etc.)
 ├── styles/                # Global styles (Tailwind CSS)
@@ -99,7 +101,7 @@ npm run dev
 Feel free to customize the following files to suit your project needs:
 
 1. **Tailwind Configuration**: Modify `app/globals.css` for custom themes or plugins.
-2. **Navbar Links**: Update the `menuItems` array in `layout.tsx` to add or modify navigation links.
+2. **Navbar Links**: Update `components/layout/MenuItems.ts` to add or modify navigation links.
 3. **Animations**: Adjust animation settings in `PageTransition.tsx` or `Navbar.tsx`.
 
 ---

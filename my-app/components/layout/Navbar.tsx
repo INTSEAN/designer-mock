@@ -6,9 +6,6 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { motion, AnimatePresence, useAnimation } from "framer-motion";
 import ThemeToggle from "./ThemeToggle";
-import UserDropdown from "./UserDropdown";
-import { useAuthStore } from "@/lib/store/authStore";
-import { Button } from "@/components/ui/button";
 import { MenuItem } from "@/types/ui";
 
 interface NavbarProps {
@@ -21,8 +18,6 @@ const Navbar: React.FC<NavbarProps> = ({ menuItems }) => {
   const pathname = usePathname();
   const [mounted, setMounted] = useState(false);
   const controls = useAnimation();
-  const { isAuthenticated } = useAuthStore();
-
   const mobileMenuRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -107,24 +102,12 @@ const Navbar: React.FC<NavbarProps> = ({ menuItems }) => {
                     {item.label}
                   </motion.span>
                 </Link>
-              ))}{" "}
+              ))}
               {mounted && <ThemeToggle />}
-              {mounted && isAuthenticated ? (
-                <UserDropdown />
-              ) : (
-                <Link href="/auth/login">
-                  <Button variant="default" className="px-4 py-2" asChild>
-                    <motion.div whileHover={{ scale: 1.05 }}>
-                      Sign In
-                    </motion.div>
-                  </Button>
-                </Link>
-              )}
             </div>
           </div>{" "}
           <div className="md:hidden flex items-center space-x-2">
             {mounted && <ThemeToggle />}
-            {mounted && isAuthenticated && <UserDropdown />}
             <motion.button
               onClick={toggleMobileMenu}
               className="inline-flex items-center justify-center p-2 rounded-md text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white focus:outline-none"
@@ -174,21 +157,9 @@ const Navbar: React.FC<NavbarProps> = ({ menuItems }) => {
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   {item.label}
-                </Link>{" "}
-              </motion.div>
-            ))}
-            {mounted && !isAuthenticated && (
-              <motion.div className="mt-4 px-3">
-                <Link href="/auth/login">
-                  <Button
-                    className="w-full"
-                    onClick={() => setIsMobileMenuOpen(false)}
-                  >
-                    Sign In
-                  </Button>
                 </Link>
               </motion.div>
-            )}
+            ))}
           </div>
         </motion.div>
       </AnimatePresence>

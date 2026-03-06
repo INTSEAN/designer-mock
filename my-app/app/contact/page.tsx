@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 
-export default function About() {
+export default function Contact() {
   return (
     <motion.div
       className="min-h-screen mt-16 px-4 py-16"
@@ -17,7 +17,7 @@ export default function About() {
           animate={{ y: 0, opacity: 1 }}
           transition={{ delay: 0.1 }}
         >
-          About
+          Contact
         </motion.h1>
         <motion.p
           className="text-gray-600 dark:text-gray-400"
@@ -25,7 +25,7 @@ export default function About() {
           animate={{ y: 0, opacity: 1 }}
           transition={{ delay: 0.2 }}
         >
-          Add your about content here.
+          Add your contact form or details here.
         </motion.p>
       </main>
     </motion.div>
